@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Beer Clicker Draft :beers: (https://img.shields.io/github/manifest-json/v/JohnVidal77/beer-clicker-draft)
+# Beer Clicker Draft :beers: [![CDNJS](https://img.shields.io/github/manifest-json/v/JohnVidal77/beer-clicker-draft)]()
 
 My first game creation venture, creating a Cookie Clicker inspired idle game.
 Focused on starting studies on Game Design and development.
