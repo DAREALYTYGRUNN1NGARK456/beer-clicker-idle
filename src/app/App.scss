@@ -1,0 +1,69 @@
+#App {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  
+  >div {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+
+  >.clicker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  >.upgrade >div >h3 {
+    text-align: left;
+    margin-left: 40px
+  }
+
+  >.upgrade >div >.buildingQuant{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  >.upgrade >div >.buildingQuant >div{
+    flex: 0 0 50%;
+  }
+
+  >.upgrade >div >.buildingQuant >div >span {
+    transition: .2s;
+    margin: 0 10px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #c6c6c6;
+      padding: 5px 10px;
+      border-radius: 3px; 
+    }
+  }
+
+  >.upgrade >div >.buildingQuant >div >.current {
+    background-color: #F28705;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 3px;    
+  }
+
+    >.version {
+      border: none;
+    font-weight: bolder;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  #App {
+    flex-wrap: nowrap;
+    
+    >div {
+      flex: 0 0 50%;
+      border: 1px solid grey
+    }
+  }
+}
