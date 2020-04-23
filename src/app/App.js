@@ -64,22 +64,38 @@ const Style = {
 function App(props) {
   const [beerSold, setBeerSold] = useState(0);
   const [quantToBuy, setQuantToBuy] = useState(1);
+  const [globalAutoClick, setGlobalAutoClick] = useState(0);
+  const [buildsQnt, setBuildsQnt] = useState(0);
 
-  // updateAfterBuy = (objReceived) => {
-  //   let currentBeerDrinked = this.state.beerDrinked - objReceived;
-  //   this.setState({ beerDrinked: currentBeerDrinked });
-  // };
-  //
+  function updateAfterBuy(objReceived) {
+    let currentBeerDrinked = beerSold - objReceived.currentPriceBeforeUpdate,
+      currentMultiplier = globalAutoClick;
+
+    setBuildsQnt(buildsQnt + quantToBuy);
+    setGlobalAutoClick(globalAutoClick + objReceived.autoClick);
+    setBeerSold(currentBeerDrinked);
+  }
+
   function clickDrinkBeer() {
-    let num = this.state.beerDrinked;
-    this.setState({ beerDrinked: ++num });
+    let num = beerSold;
+    setBeerSold(++num);
+  }
+
+  function updateQuantToBuy(value) {
+    setQuantToBuy(value);
+  }
+
+  if (buildsQnt) {
+    setTimeout(() => {
+      setBeerSold(beerSold + globalAutoClick);
+    }, 1000);
   }
 
   return (
     <Style.Container>
       <Style.Clicker>
         <div>
-          <h1>Beers Sold {beerSold}</h1>
+          <h1>Beers Sold R${beerSold}</h1>
           <button name="beer" type="button" onClick={clickDrinkBeer}>
             Beer
           </button>
@@ -95,31 +111,32 @@ function App(props) {
           <Style.BuildingQntContainer>
             <Style.QntToBuy
               activated={quantToBuy === 1 ? true : false}
-              onClick={() => setQuantToBuy(1)}
+              onClick={() => updateQuantToBuy(1)}
             >
               1
             </Style.QntToBuy>
             <Style.QntToBuy
               activated={quantToBuy === 10 ? true : false}
-              onClick={() => setQuantToBuy(10)}
+              onClick={() => updateQuantToBuy(10)}
             >
               10
             </Style.QntToBuy>
             <Style.QntToBuy
               activated={quantToBuy === 100 ? true : false}
-              onClick={() => setQuantToBuy(100)}
+              onClick={() => updateQuantToBuy(100)}
             >
               100
             </Style.QntToBuy>
           </Style.BuildingQntContainer>
           <Cursor
-          // currentBeerDrinked={this.state.beerDrinked}
-          // parentCallback={}
+            currentBeerSold={beerSold}
+            updateAppAfterBuy={updateAfterBuy}
+            qntBought={quantToBuy}
           />
         </Style.BuildingContainer>
       </Style.Store>
       <Style.Version>
-        <span>v0.001 - alpha</span>
+        <span>v0.01 - alpha</span>
       </Style.Version>
     </Style.Container>
   );
