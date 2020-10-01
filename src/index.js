@@ -75,7 +75,9 @@ function CalculateStoreStatus() {
     document.getElementById(build.id).disabled = false;
   });
 
-  const upgradesEnables = UpgradesList.filter((build) => build.price < credits);
+  const upgradesEnables = UpgradesList.filter(
+    (upgrade) => upgrade.price < credits
+  );
 
   upgradesEnables.forEach((upgrade) => {
     if (upgrade.bought) return;
@@ -95,7 +97,7 @@ function verifyIfHasCredit(price) {
     return false;
   }
 
-  return;
+  return true;
 }
 
 function BuyBuild(id) {
