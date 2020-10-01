@@ -87,8 +87,22 @@ function ClickOnTarget() {
   credits += 1;
 }
 
+function verifyIfHasCredit(price) {
+  let result = credits - price;
+
+  if (credits === 0 || result < 0) {
+    alert("Voce não tem dinheiro suficiente");
+    return false;
+  }
+
+  return;
+}
+
 function BuyBuild(id) {
   const currentBuild = BuildsList.find((build) => Number(id) === build.id);
+
+  if (verifyIfHasCredit(currentBuild.price) === false) return;
+
   credits -= currentBuild.price;
   cps += currentBuild.cps;
 }
@@ -97,6 +111,8 @@ function BuyUpgrade(id) {
   const currentUpgrade = UpgradesList.find(
     (upgrade) => Number(id) === upgrade.id
   );
+
+  if (!verifyIfHasCredit(currentUpgrade.price)) return;
 
   const index = UpgradesList.findIndex((obj) => obj.id === currentUpgrade.id);
 
