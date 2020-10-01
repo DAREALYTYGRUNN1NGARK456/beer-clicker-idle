@@ -1,4 +1,4 @@
-# Beer Clicker Draft :beers: [![CDNJS](https://img.shields.io/github/package-json/v/johnvidal77/beer-clicker-draft/master)]()
+# Beer Clicker IDLE :beers: [![CDNJS](https://img.shields.io/github/package-json/v/johnvidal77/beer-clicker-draft/master)]()
 
 My first game creation venture, creating a Cookie Clicker inspired idle game.
 Focused on starting studies on Game Design and development with bare JS, CSS and HTML.
