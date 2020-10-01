@@ -18,7 +18,7 @@ const UpgradesList = [];
 const BuildsList = [
   {
     id: 1,
-    name: "Upgrade one",
+    name: "Build one",
     price: 10,
     cps: 1,
     upgrades: [
@@ -28,7 +28,7 @@ const BuildsList = [
   },
   {
     id: 2,
-    name: "Upgrade two",
+    name: "Build two",
     price: 100,
     cps: 10,
     upgrades: [
@@ -137,9 +137,10 @@ function Draw() {
   CPSpan.innerHTML = `Credits per seconds: ${cps}`;
 }
 
-var mainloop = function () {
+let mainloop = function () {
   CalculateStoreStatus(), Draw();
 };
+
 window.onload = () => {
   CreateGamePage();
   setInterval(mainloop, 16);
