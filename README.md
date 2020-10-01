@@ -6,7 +6,6 @@ Focused on starting studies on Game Design and development with bare JS, CSS and
 ## Current Version :man_technologist:
 
 - Started development of basic mechanics
-- Started creation of basic interface
 
 ## Coming Soon :date:
 

@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
 button,
 a {
   transition: 0.2s;
@@ -14,4 +20,45 @@ button:hover,
 a:hover {
   opacity: 0.6;
   cursor: pointer;
+}
+
+#currentVersion {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.main-grid {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "clicker" "builds" "upgrades";
+}
+
+.clicker-sec {
+  grid-area: clicker;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clicker-sec div {
+  text-align: center;
+}
+
+.buildings-sec {
+  padding: 0 0.3rem;
+  grid-area: builds;
+}
+
+.upgrades-sec {
+  padding: 0 0.3rem;
+  grid-area: upgrades;
+}
+
+.btn-item {
+  width: 100%;
+  height: 3rem;
+  margin: 0.6rem 0;
 }

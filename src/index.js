@@ -3,6 +3,13 @@ const Pointers = document.getElementById("Pointers");
 const UpgradeOne = document.getElementById("upgradeOne");
 const UpgradeTwo = document.getElementById("upgradeTwo");
 const CPSpan = document.getElementById("CPSpan");
+const Version = document.getElementById("currentVersion");
+
+// PASS THIS TO .ENV
+const VERSION = "0.0.1";
+const TARGET = "dev";
+
+Version.innerHTML = `VERSION: ${VERSION} | TARGET: ${TARGET}`;
 
 let credits = 0,
   cps = 0;
@@ -44,7 +51,7 @@ function createUpgradeButtons() {
     if (upgrades.bought) return;
 
     btnUpgradesList.push(
-      `<button id="${upgrades.id}" onclick="BuyUpgrade(this.id)" disabled>${upgrades.name}</button>`
+      `<button id="${upgrades.id}" class="btn-item" onclick="BuyUpgrade(this.id)" disabled>${upgrades.name}</button>`
     );
   });
 
@@ -59,7 +66,7 @@ function CreateGamePage() {
 
   BuildsList.forEach((build) => {
     btnList.push(
-      `<button id="${build.id}" onclick="BuyBuild(this.id)" disabled>${build.name}</button>`
+      `<button id="${build.id}" class="btn-item" onclick="BuyBuild(this.id)" disabled>${build.name}</button>`
     );
   });
 

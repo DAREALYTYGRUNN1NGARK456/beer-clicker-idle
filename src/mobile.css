@@ -1,0 +1,6 @@
+@media (min-width: 425px) {
+  .main-grid {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "clicker builds" "clicker upgrades";
+  }
+} ;

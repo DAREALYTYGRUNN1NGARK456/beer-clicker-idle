@@ -7,16 +7,28 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <link rel="stylesheet" href="src/main.css" />
+    <link rel="stylesheet" href="src/mobile.css" />
   </head>
   <body>
-    <main>
-      <section>
-        <h1 id="Pointers"></h1>
-        <span id="CPSpan"></span>
-        <button id="TargetToClick" onclick="ClickOnTarget()">enviar</button>
+    <main class="main-grid">
+      <section class="clicker-sec">
+        <div>
+          <h1 id="Pointers"></h1>
+          <span id="CPSpan"></span>
+          <button id="TargetToClick" class="btn-item" onclick="ClickOnTarget()">
+            enviar
+          </button>
+        </div>
       </section>
-      <section id="buildinglist"></section>
-      <section id="upgradelist"></section>
+      <section class="buildings-sec">
+        <h2>Builds</h2>
+        <ul id="buildinglist"></ul>
+      </section>
+      <section class="upgrades-sec">
+        <h2>Upgrades</h2>
+        <ul id="upgradelist"></ul>
+      </section>
+      <span id="currentVersion"></span>
     </main>
 
     <script src="src/index.js" type="text/javascript" charset="utf-8"></script>
