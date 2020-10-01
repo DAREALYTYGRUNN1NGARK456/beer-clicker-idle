@@ -137,9 +137,10 @@ function Draw() {
   CPSpan.innerHTML = `Credits per seconds: ${cps}`;
 }
 
-var mainloop = function () {
+let mainloop = function () {
   CalculateStoreStatus(), Draw();
 };
+
 window.onload = () => {
   CreateGamePage();
   setInterval(mainloop, 16);
