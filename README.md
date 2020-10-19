@@ -14,3 +14,5 @@ Focused on starting studies on Game Design and development with bare JS, CSS and
 - Start creating graphics
 - Start creating achievements
 - Add first building upgrades
+
+wanna test it out?[![Run on Repl.it](https://repl.it/badge/github/DAREALYTYGRUNN1NGARK456/beer-clicker-idle)](https://repl.it/github/DAREALYTYGRUNN1NGARK456/beer-clicker-idle)
